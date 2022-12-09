@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Resume</title>
+    </head>
+    <body dir="rtl" bgcolor="#A5A5B5">
+        <ul>
+            <li><a onclick="abilities()">صفخه1</a></li>
+            <li><a onclick="achive()">صفحه2</a></li>
+            <li><a onclick="contactUS()">صفحه3</a></li>
+            <li style="float:right"><a class="active" onclick="bio()">About</a></li>
+        </ul>
+
+
+        <div  class="section" id="bio">
+            <center>
+                <img src ="images.jpg" alt="loading..." width="500" height="400" >
+            </center>
+
+            <font color = "black" size ="20"> <b><br/><br/> بیوگرافی : <br/><br/></b> </font>
+        
+            <table border="2" width="500">
+                <tr> <td> نام: </td> <td> ثنا </td> </tr> 
+                <tr><td> نام خانوادگی: </td><td> بابایان ونستان </td></tr> 
+                <tr> <td> تاریخ تولد: </td> <td> 1307/07/07 </td> </tr> 
+                <tr><td> شغل: </td><td> دانشجو </td></tr>
+                <tr><td> مقطع تحصیلی: </td><td> کارشناسی </td></tr>
+                <tr><td> دانشگاه: </td><td> صنعتی شریف </td></tr>
+            </table>
+        </div>
+        
+
+        <div id="abilities" class="section">
+            <font color = "black" size ="20"> <b><br/><br/>مهارت ها و توانمندی ها :<br/></b> </font>
+            <ul>
+                <li> کتاب خوانی </li>
+                <li> بسکتبال </li>
+                <li> نوازندگی </li>
+                <li> شطرنج </li>
+                <li> آشپزی </li>
+            </ul>
+        </div>
+        
+
+        <div id="achive" class="section">
+            <font color = "black" size ="20"> <b><br/><br/> دستاوردها و افتخارات :  <br/></b> </font>
+            <ul>
+                <li> رتبه در کنکور </li>
+                <li> تسلط به زبانی خارجی </li>
+                <li> کسب جایزه کوهنوردان خردسال </li>
+                <li> مقام اول در شطرنج بین مدارس </li>
+            </ul>
+            <font color = "green" size ="20"> <b><br/><br/> تماس با من <br/></b> </font>
+        
+        </div>
+        
+
+        <div id="contactUS" class="section">
+            <form method="post" action="http://localhost/test/h.php">
+            <table> <tr> <td>
+            <font face="b nazanin , tahoma" style="font-weight: bold; " size="4" > 
+            نام</font> </td> 
+            <td>&nbsp;&nbsp;<input type="text" value="" name="fname"/></td>
+            </tr> <tr> <td> <font face="b nazanin , tahoma" style="font-weight: bold; " >
+            نام خانوادگی</font> </td>
+            <td> &nbsp;&nbsp; <input type="text" value="" name="lname"/> </td> </tr>
+            <tr> <td> <font face="b nazanin , tahoma" style="font-weight: bold; " >
+            پست الکترونیک </font></td>
+            <td>&nbsp;&nbsp;<input type="text" value="" name="email"/></td> </tr>
+            </table>
+            <br> <br><br><br>
+            <table><tr><td><font face="b nazanin , tahoma" style="font-weight: bold; " >
+            </font></td><td> &nbsp;&nbsp;<textarea name="description" rows="10" cols="40"></textarea> توضیحات 
+            </td> </tr></table>
+            <br><br><br><br>
+            <input type="submit" value="ثبت مشخصات"/>
+          </form> 
+          <button onclick="Cheack();">کلیک کنید</button>
+          <h2 id="Result"></h2>
+        </div>
+
+<footer>
+    <p>Posted by: Sana Babayan</p>
+    <p>Contact information: <a href="mailto:someone@example.com">
+    someone@example.com</a>.</p>
+</footer>
+
+<script>
+    function Cheack(){
+        var MyMessage , Result;
+        Result = document.getElementById("Result");
+        MyMessage = confirm("آیا از ازلاعاتی که وارد کردید اطمینان دارید؟");
+        
+        if( MyMessage == true ){
+        Result.innerHTML = "عملیات موفقیت آمیز";
+        }else{
+        Result.innerHTML = "عملیات ناموفقیت آمیز";
+        }
+    }
+    function hidden(){
+            var sections = document.getElementsByClassName('section');
+
+            for (var i = 0; i < sections.length; i ++) {
+                    sections[i].style.display = 'none';
+            }
+    }
+
+
+
+    hidden();
+    document.getElementById('bio').style.display = 'block';
+    
+    
+    function bio(){
+        hidden();
+        document.getElementById('bio').style.display = 'block';
+    }
+    function abilities(){
+        hidden();
+        document.getElementById('abilities').style.display = 'block';
+    }
+    function contactUS(){
+        hidden();
+        document.getElementById('contactUS').style.display = 'block';
+    }
+    function achive(){
+        hidden();
+        document.getElementById('achive').style.display = 'block';
+    }
+</script>
+</body>
+</html>
